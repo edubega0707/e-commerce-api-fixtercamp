@@ -25,7 +25,7 @@ SECRET_KEY = '%sp_$452x%(w@$9gm4j7@$4sjw5@!d)c+x+_mp5#q$g_^_w!9k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -37,6 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'orders', 
+    'products',
+    'accounts',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -118,3 +123,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+REST_FRAMEWORK = {
+    # Use Django's standard `django.contrib.auth` permissions,
+    # or allow read-only access for unauthenticated users.
+     'DEFAULT_AUTHENTICATION_CLASSES': (
+         'rest_framework.authentication.SessionAuthentication',
+         'rest_framework.authentication.TokenAuthentication',
+         'rest_framework.authentication.BasicAuthentication',
+
+     ),
+
+    'DEFAULT_PERMISSION_CLASSES': [
+        #'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+        # 'rest_framework.permissions.IsAuthenticated'
+    ]
+}
