@@ -7,12 +7,14 @@ from django.views.static import serve
 from rest_framework import routers
 from products.views import ProductViewSet
 from accounts.views import UserViewSet
+from orders.views import OrderViewSet
 from rest_framework.authtoken import views
 
 
 router = routers.DefaultRouter()
 router.register('products', ProductViewSet)
 router.register('users', UserViewSet)
+router.register('orders', OrderViewSet)
 
 
 
