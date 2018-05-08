@@ -3,6 +3,13 @@ from .models import Order, OrderItem
 from products.models import Product
 import uuid
 from django.db.models import UUIDField
+from django.contrib.auth.models import User
+
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['id', 'username', 'email']
 
 
 
@@ -32,6 +39,8 @@ class OrderSerializer(serializers.ModelSerializer):
 		# allow_null=True, 
 		# required=False,
         # many=True)
+    user = UserSerializer(read_only=True, default=serializers.CurrentUserDefault())
+
     class Meta:
         model = Order
         fields = '__all__'
