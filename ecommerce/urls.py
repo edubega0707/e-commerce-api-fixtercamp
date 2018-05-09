@@ -6,7 +6,7 @@ from django.conf import settings
 from django.views.static import serve
 from rest_framework import routers
 from products.views import ProductViewSet, CategoryViewSet
-from accounts.views import UserViewSet
+from accounts.views import UserViewSet, MyUser
 from orders.views import OrderViewSet
 from rest_framework.authtoken import views
 
@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api-auth/', include('rest_framework.urls')),
     path('api-token-auth/', views.obtain_auth_token),
+    path('my_user/', MyUser.as_view()),
     path('', include(router.urls)),
     url(
         regex=r'^media/(?P<path>.*)$',
