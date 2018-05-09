@@ -5,7 +5,7 @@ from django.conf.urls import url
 from django.conf import settings
 from django.views.static import serve
 from rest_framework import routers
-from products.views import ProductViewSet
+from products.views import ProductViewSet, CategoryViewSet
 from accounts.views import UserViewSet
 from orders.views import OrderViewSet
 from rest_framework.authtoken import views
@@ -15,6 +15,7 @@ router = routers.DefaultRouter()
 router.register('products', ProductViewSet)
 router.register('users', UserViewSet)
 router.register('orders', OrderViewSet)
+router.register('categories', CategoryViewSet)
 
 
 

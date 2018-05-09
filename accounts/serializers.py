@@ -1,6 +1,7 @@
-from .models import Profile
+from .models import Profile, ItemCart, UserCart
 from django.contrib.auth.models import User
 from rest_framework import serializers
+from products.models import Product
 
 class ProfileSerializer(serializers.ModelSerializer):
 	#user = BasicUserSerializer(many=False, read_only=True)
@@ -21,3 +22,4 @@ class UserSerializer(serializers.ModelSerializer):
 		user.save()
 
 		return user
+

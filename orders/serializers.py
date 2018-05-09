@@ -33,14 +33,12 @@ class ItemSerializer(serializers.ModelSerializer):
 
 class OrderSerializer(serializers.ModelSerializer):
     items = ItemSerializer(many=True)
-    #items_id = serializers.PrimaryKeyRelatedField(
-		# queryset=OrderItem.objects.all(), 
-		# write_only=True, 
-		# allow_null=True, 
-		# required=False,
-        # many=True)
-    user = UserSerializer(read_only=True, default=serializers.CurrentUserDefault())
-
+    #user = UserSerializer(read_only=True, many=False)       
+    # user_id=(serializers.PrimaryKeyRelatedField(
+	# 	queryset=User.objects.all(), 
+	# 	write_only=True, 
+	# 	required=True,
+    #     many=False))
     class Meta:
         model = Order
         fields = '__all__'
