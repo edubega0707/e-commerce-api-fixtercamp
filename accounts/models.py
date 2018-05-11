@@ -9,6 +9,7 @@ class Profile(models.Model):
 	user = models.OneToOneField(User, related_name='profile', on_delete=models.CASCADE)
 	phone = models.IntegerField(blank=True, null=True)
 	address = models.TextField(blank=True, null=True)
+	conekta = models.CharField(max_length=200, blank=True, null=True)
 
 	def __str__(self):
 		return self.user.username

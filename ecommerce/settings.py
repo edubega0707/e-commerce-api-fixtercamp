@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'corsheaders',
+    'conekta',
 ]
 
 MIDDLEWARE = [
@@ -146,3 +147,6 @@ REST_FRAMEWORK = {
 
 #corsheaders conf
 CORS_ORIGIN_ALLOW_ALL = True
+
+CONEKTA_PRIVATE_KEY = 'key_r6eURjRCxyu11J95xsFdww'
+
