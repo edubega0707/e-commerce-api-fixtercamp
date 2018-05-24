@@ -24,7 +24,7 @@ class Profile(models.Model):
 		instance.profile.save()
 
 class UserCart(models.Model):
-	user = user = models.OneToOneField(User, related_name='cart', on_delete=models.CASCADE)
+	user =models.OneToOneField(User, related_name='cart', on_delete=models.CASCADE)
 
 	def __str__(self):
 		return self.user.username
