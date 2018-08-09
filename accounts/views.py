@@ -12,7 +12,9 @@ from rest_framework.response import Response
 class UserViewSet(viewsets.ModelViewSet):
 	queryset = User.objects.all()
 	serializer_class = UserSerializer 
-	
+
+
+
 class MyUser(APIView):
 	
 	def get(self, request, format=None):

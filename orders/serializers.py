@@ -33,6 +33,7 @@ class ItemSerializer(serializers.ModelSerializer):
 
 class OrderSerializer(serializers.ModelSerializer):
     items = ItemSerializer(many=True)
+
     #user = UserSerializer(read_only=True, many=False)       
     # user_id=(serializers.PrimaryKeyRelatedField(
 	# 	queryset=User.objects.all(), 

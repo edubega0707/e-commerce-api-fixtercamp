@@ -33,6 +33,7 @@ class ItemCart(models.Model):
 	cart = models.ForeignKey(UserCart, related_name="items", on_delete=models.SET_NULL, blank=True, null=True)
 	product = models.ForeignKey(Product, related_name="cart_items", on_delete=models.SET_NULL, blank=True, null=True)
 	quantity = models.IntegerField()
+
 	
 	def __str__(self):
 		return 'item {} of order {}'.format(self.product.name, self.order.id)

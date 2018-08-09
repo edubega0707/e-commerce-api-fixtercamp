@@ -19,6 +19,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 	#pagination_class = ProductPagination
 	#buscador y filtros
 
+
 	def get_queryset(self, *args, **kwargs):
 		category = self.request.GET.get('cat')
 		search = self.request.GET.get('s')
